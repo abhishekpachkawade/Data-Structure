@@ -90,6 +90,17 @@ public class MyLinkedList {
 		System.out.println("The node with key values 30 is at position" + position + " ");
 	}
 
+	/* This method is used for deleting a key at particular position */
+	public void delete(int position) {
+		MyNode previousNode = (MyNode) head;
+		MyNode currentNode = (MyNode) head;
+		for (int i = 0; i < position; i++) {
+			previousNode = currentNode;
+			currentNode = (MyNode) currentNode.next;
+		}
+		previousNode.next = currentNode.next;
+	}
+
 	/* Method to print the nodes */
 	public void printMyNodes() {
 		StringBuilder myNodes = new StringBuilder("My Nodes : ");
