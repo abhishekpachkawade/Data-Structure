@@ -35,13 +35,20 @@ public class MyLinkedList {
 		}
 	}
 
-	/* This method is used to insert the element in between two nodes */
+	/* Method to insert elements in between two nodes */
 	public void insert(INode myNode, INode newNode) {
 		INode tempNode = myNode.getNext();
 		myNode.setNext(newNode);
 		newNode.setNext(tempNode);
 	}
 
+	/* This method is used for deleting the first node */
+	public void popFirst() {
+		if (head != null)
+			this.head = head.getNext();
+	}
+
+	/* Method to print the nodes */
 	public void printMyNodes() {
 		StringBuilder myNodes = new StringBuilder("My Nodes : ");
 		INode tempNode = head;
